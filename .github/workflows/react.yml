@@ -1,4 +1,4 @@
-name: React CI/CD
+name: Test
 
 on:
   push:
@@ -13,12 +13,12 @@ jobs:
     strategy:
       matrix:
         node-version: [14.x]
-
     steps:
       - uses: actions/checkout@v2
       - name: Use Node.js ${{ matrix.node-version}}
+        uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node-version }}
       - run: npm i
-      - run: npm run build --if-present
+      - run: npm run build
       - run: mv /Users/fdileo/Desktop/hello-react/build /Users/fdileo/Desktop/hello-react/helloreact
