@@ -23,3 +23,4 @@ jobs:
 
       - run: npm i
       - run: npm run build
+      - run: mv /Users/fdileo/Desktop/hello-react/build /Users/fdileo/Desktop/hello-react/helloreact
